@@ -1,0 +1,8 @@
+<div>
+    <h3>{{cryptoCurrency.name}}</h3>
+    <img src="{{cryptoCurrency.image.small}}" alt="Ether">
+    <div>Current value: <b>{{cryptoCurrency.market_data.current_price.usd | currency}}</b></div>
+    <div>In last 24h: <b>{{cryptoCurrency.market_data.price_change_24h}}%</b></div>
+    <div>In last 7d: <b>{{cryptoCurrency.market_data.price_change_percentage_7d}}%</b></div>
+    <div>homepage: <a href="{{cryptoCurrency.links.homepage}}">Go to {{cryptoCurrency.name}} homepage</a> </div>
+</div>

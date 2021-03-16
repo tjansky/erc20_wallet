@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ICryptocurrency } from './models/Icryptocurrency';
+import { ICryptocurrency } from './shared/models/Icryptocurrency';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +14,20 @@ export class AppComponent {
 
   ethEndpoint = "https://api.coingecko.com/api/v3/coins/ethereum?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false";
   etherCurrency: ICryptocurrency;
+  likedCryptoCurrencys: ICryptocurrency[] = [];
 
   ngOnInit() {
     this.http.get<ICryptocurrency>(this.ethEndpoint).subscribe(res => {
       //console.log(res)
-      this.etherCurrency = res;
-      console.log(this.etherCurrency.name, this.etherCurrency.market_data.current_price.usd + '$');
+      //this.etherCurrency = res;
+      //console.log(this.etherCurrency.name, this.etherCurrency.market_data.current_price.usd + '$');
       //console.log(this.etherCurrency.market_data.current_price.usd);
       //console.log(this.etherCurrency.market_data.current_price.eur);
+
+      this.likedCryptoCurrencys.push(res);
+      this.likedCryptoCurrencys.push(res);
+      this.likedCryptoCurrencys.push(res);
+
     });
   }
 
