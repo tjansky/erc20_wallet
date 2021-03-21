@@ -1,3 +1,13 @@
-<div *ngFor="let curr of likedCryptoCurrencys">
+
+<form action="">
+  <label for="">Add crypto curreny you own</label>
+  <input [(ngModel)]="inputCoin" type="text" name="cryptoInput">
+  <button (click)="onAddLikedCoin()" type="button">Add token</button>
+</form>
+
+<div>to be added: <b>{{inputCoin}}</b></div>
+
+
+<div *ngFor="let curr of likedCoins">
   <app-currency-card [cryptoCurrency]="curr"></app-currency-card>
 </div>
